@@ -105,7 +105,7 @@
             @if($clients->IsNotEmpty())
                 @foreach($clients as $client)
                     <div class="col-lg-2 col-md-3 col-sm-4">
-                        <img src="/images/client/bkkbn.jpg" alt="bkkbn">
+                        <img src="{{ $client->media_link }}" alt="bkkbn">
                     </div>
                 @endforeach
             @endif

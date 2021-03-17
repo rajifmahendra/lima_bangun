@@ -17,28 +17,30 @@
             <h2 class="section-title">CONTACT <span class="bold main-text-color">US</span></h2>
           </div>
           <div>
-            <form id="contact-form" action="" method="POST">
+          <form id="contact-form" action="{{ route('store.contact') }}" method="POST">
+              @csrf
+              <input type="hidden" name="web_url" value="{{ url('/') }}">
               <div class="row">
                 <div class="col-md-12 mb-30">
                   <input type="text" value="" data-msg-required="Please enter your name" maxlength="100" class="controled" name="name" id="name" placeholder="NAME" required="">
                 </div>
               </div>
-              <div class="row">    
+              <div class="row">
                 <div class="col-md-12 mb-30">
                   <input type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required="">
                   </div>
               </div>
-              <div class="row">    
+              <div class="row">
                 <div class="col-md-12 mb-30">
-                  <input type="number" value="" data-msg-required="Please enter your phone number" data-msg-email="Please enter a valid phone number" maxlength="100" class="controled" name="phone" id="email" placeholder="PHONE NUMBER Contoh: 082123456789" required="">
+                  <input type="number" value="" data-msg-required="Please enter your phone number" data-msg-email="Please enter a valid phone number" maxlength="100" class="controled" name="phone" id="phone" placeholder="PHONE NUMBER Contoh: 6282123456789" required="">
                   </div>
               </div>
-              <div class="row">    
+              <div class="row">
                 <div class="col-md-12 mb-30">
-                  <select name="topik" class="controled">
+                  <select name="category" class="controled">
                     <option value="other">Other</option>
-                    <option value="">Kritik dan Saran</option>
-                    <option value="">Daftar Mitra Kerja PT. LIMA BANGUN PERSADA</option>
+                    <option value="kritik">Kritik dan Saran</option>
+                    <option value="daftar">Daftar Mitra Kerja PT. LIMA BANGUN PERSADA</option>
                   </select>
                 </div>
               </div>
@@ -59,7 +61,7 @@
                   </div>
                 </div>
               </div>
-            </form>	
+            </form>
             <div class="alert alert-success hidden animated fadeIn" id="contactSuccess">
               Thanks, your message has been sent to us.
             </div>
@@ -76,6 +78,6 @@
 @section('js')
 <script src="https://maps.google.com/maps/api/js?key=INSERT-YOUR-API-KEY-HERE"></script>
 <script src="{{ asset('template/html/js/gmap3.min.js') }}"></script>
-<script src="{{ asset('template/html/js/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('template/html/js/contact-form-validation.js') }}"></script>  
+{{--<script src="{{ asset('template/html/js/jquery.validate.min.js') }}"></script>--}}
+<script src="{{ asset('template/html/js/contact-form-validation.js') }}"></script>
 @endsection

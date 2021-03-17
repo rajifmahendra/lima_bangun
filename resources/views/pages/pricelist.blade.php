@@ -17,110 +17,40 @@
 </div>
 @endsection
 @section('content')
-<div class="page-section pt-110-b-30-cont pt-80">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-3 col-lg-3 wow fadeIn pb-70" style="visibility: visible; animation-name: fadeIn;">
-        <div class="post-prev-img">
-          <a><img src="/template/html/images/shop/items/1.jpg" alt="img"></a>
+    <div class="main-bg-color plr-30 plr-0-767 clearfix">
+        <div class="white-bg plr-30 pt-50 pb-20">
+            <div class="relative">
+                <div class="row">
+                    @if($contents->isNotEmpty())
+                        @foreach($contents as $content)
+                            <div class="col-sm-6 col-md-3 col-lg-3 wow fadeIn pb-70">
+                                <div class="post-prev-more-cont clearfix">
+                                    <div class="shop-add-btn-cont">
+                                        <button type="button"  class="button medium primary-light shop-add-btn" data-toggle="modal" data-target="#modal{{$content->id}}">
+                                            <b>{{ $content->original_name }}</b>
+                                        </button>
+                                        <div class="modal fade bd-example-modal-lg" id="modal{{$content->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <iframe src="{{ env('MBS_URL').'/'.'show-pdf?pdf_file='.$content->content }}" width="100%" height="480">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
         </div>
-        <div class="shop-price-cont">
-          <del>$130.00</del>&nbsp;<strong>$98.55</strong>
-        </div>
-        <div class="post-prev-more-cont clearfix">
-          <div class="shop-add-btn-cont">
-            <a class="button medium gray shop-add-btn lightbox" href="/template/html/images/shop/items/1.jpg">SEE THIS</a>
-          </div>
-          <div class="shop-sub-btn-cont">
-            <a href="#" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span></a>
-            <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span aria-hidden="true" class="social_share"></span>
-            </a>
-            <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-              <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-              </li>
-              <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-              <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 col-lg-3 wow fadeIn pb-70" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeIn;">
-        <div class="post-prev-img">
-          <a><img src="/template/html/images/shop/items/2.jpg" alt="img"></a>
-        </div>
-        <div class="shop-price-cont">
-          <del>$130.00</del>&nbsp;<strong>$98.55</strong>
-        </div>
-        <div class="post-prev-more-cont clearfix">
-          <div class="shop-add-btn-cont">
-            <a class="button medium gray shop-add-btn lightbox" href="/template/html/images/shop/items/1.jpg">SEE THIS</a>
-          </div>
-          <div class="shop-sub-btn-cont">
-            <a href="#" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span></a>
-            <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span aria-hidden="true" class="social_share"></span>
-            </a>
-            <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-              <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-              </li>
-              <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-              <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 col-lg-3 wow fadeIn pb-70" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeIn;">
-        <div class="post-prev-img">
-          <a><img src="/template/html/images/shop/items/3.jpg" alt="img"></a>
-        </div>
-        <div class="shop-price-cont">
-          <del>$130.00</del>&nbsp;<strong>$98.55</strong>
-        </div>
-        <div class="post-prev-more-cont clearfix">
-          <div class="shop-add-btn-cont">
-            <a class="button medium gray shop-add-btn lightbox" href="/template/html/images/shop/items/1.jpg">SEE THIS</a>
-          </div>
-          <div class="shop-sub-btn-cont">
-            <a href="#" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span></a>
-            <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span aria-hidden="true" class="social_share"></span>
-            </a>
-            <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-              <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-              </li>
-              <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-              <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 col-lg-3 wow fadeIn pb-70" data-wow-delay="600ms" style="visibility: visible; animation-delay: 600ms; animation-name: fadeIn;">
-        <div class="post-prev-img">
-          <a><img src="/template/html/images/shop/items/4.jpg" alt="img"></a>
-        </div>
-        <div class="shop-price-cont">
-          <del>$130.00</del>&nbsp;<strong>$98.55</strong>
-        </div>
-        <div class="post-prev-more-cont clearfix">
-          <div class="shop-add-btn-cont">
-            <a class="button medium gray shop-add-btn lightbox" href="/template/html/images/shop/items/1.jpg">SEE THIS</a>
-          </div>
-          <div class="shop-sub-btn-cont">
-            <a href="#" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span></a>
-            <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span aria-hidden="true" class="social_share"></span>
-            </a>
-            <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-              <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-              </li>
-              <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-              <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 @endsection

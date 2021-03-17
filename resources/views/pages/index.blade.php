@@ -17,7 +17,7 @@
   <div class="local-scroll-cont font-white">
     <a href="#about" class="scroll-down smooth-scroll">
       <div class="icon icon-arrows-down"></div>
-    </a>  
+    </a>
   </div>
 </div>
 @endsection
@@ -35,7 +35,7 @@
             <div class="fes6-box wow fadeIn" >
               <div class="icon icon-basic-globe"></div>
               <h3>
-                <span class="bold main-text-color">PT. LIMA BANGUN</span> PERSADA MERUPAKAN PERUSAHAAN YANG BERGERAK DALAM JASA KOTRUKSI, INSTALASI DEKORASI INTERIOR, PEMANGANGAN PERANCAH DAN SEBAGAI BENTUK INDONESIA MEMBANGUN YANG AMAN DENGAN PENGALAMAN-PENGALAMAN KAMI.
+                <span class="bold main-text-color">PT. LIMA BANGUN PERSADA</span> {{ isset($aboutContents['about_description'])?$aboutContents['about_description']:'' }}
               </h3>
             </div>
           </div>

@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Clients;
 use App\Models\Companies;
 use App\Models\Contents;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 
-class HomeController extends Controller
+class AboutController extends Controller
 {
     public function index()
     {
@@ -19,13 +18,20 @@ class HomeController extends Controller
         }
         $aboutContents = [];
         $contents   = Contents::with([])->where('companies_id', $companies->id)->where('section', env('BASE_SECTION') . '_about')->get();
+        $clients    =  Clients::with(['client_details'])->where('companies_id', $companies->id)->get();
         foreach ($contents as $content) {
             switch ($content['content_name']) {
+                case 'about_visi':
+                    $aboutContents['about_visi'] = $content['content'];
+                break;
+                case 'about_misi':
+                    $aboutContents['about_misi'] = $content['content'];
+                break;
                 case 'about_description':
                     $aboutContents['about_description'] = $content['content'];
-                    break;
+                break;
             }
         }
-        return view('pages.index', compact('aboutContents'));
+        return view('pages.about', compact('aboutContents', 'clients'));
     }
 }

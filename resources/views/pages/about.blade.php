@@ -17,7 +17,7 @@
   <div class="local-scroll-cont font-white">
     <a href="#about" class="scroll-down smooth-scroll">
       <div class="icon icon-arrows-down"></div>
-    </a>  
+    </a>
   </div>
 </div>
 @endsection
@@ -83,13 +83,13 @@
       <div class="col-md-6">
         <h1 class="bold main-text-color mt-0">VISI</h1>
         <p>
-          Menjadi penyedia produk layanan berkualitas tinggi dan layanan dengan harga kompetitif, berkomitmen untuk transparan dan dapat diandalkan dipercaya dalam bekerja kepada semua klien dan pemangku kepentingan
+            {{ isset($aboutContents['about_visi'])?$aboutContents['about_visi']:'' }}
         </p>
       </div>
       <div class="col-md-6">
         <h1 class="bold main-text-color mt-0">MISI</h1>
         <p>
-          Menjadi perusahaan yang berkomitmen dan selalu menyediakan layanan terbaik dan dapat diandalkan di indonesia dari bidang yang kami sediakan bekerja sama dengan baik
+            {{ isset($aboutContents['about_misi'])?$aboutContents['about_misi']:'' }}
         </p>
       </div>
     </div>
@@ -102,44 +102,13 @@
       <h1 class="bold text-center" style="margin-bottom: 0">KLIEN KAMI</h1>
       <div class="col-md-12 text-center" style="padding: 20px 0">
         <div class="row">
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/bkkbn.jpg" alt="bkkbn">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/bekraf.jpg" alt="bekraf">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/caraka-buana.png" alt="caraka-buana">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/dishub.png" alt="dishub">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/kemenkop.jpg" alt="kemenkop">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/kementrian-kelautan.png" alt="kementrian-kelautan">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/kementrian-sosial.png" alt="kementrian-sosial">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/komisi-pemilihan-umum.jpg" alt="komisi-pemilihan-umum">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/ristekdikti.png" alt="ristekdikti">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/kementrian-pertahanan.png" alt="kementrian-pertahanan">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/badan-informasi-geopasial.png" alt="badan-informasi-geopasial">
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4">
-            <img src="/images/client/bawaslu.png" alt="bawaslu">
-          </div>
+            @if($clients->IsNotEmpty())
+                @foreach($clients as $client)
+                    <div class="col-lg-2 col-md-3 col-sm-4">
+                        <img src="/images/client/bkkbn.jpg" alt="bkkbn">
+                    </div>
+                @endforeach
+            @endif
         </div>
       </div>
     </div>

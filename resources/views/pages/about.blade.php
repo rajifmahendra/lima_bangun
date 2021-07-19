@@ -96,6 +96,22 @@
   </div>
 </div>
 <div class="divider divider-center mt-0"><i class="fa fa-square"></i></div>
+@if(isset($aboutContents['about_direksi']))
+    <div class="page-section clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <h1><span class="font-light">JAJARAN DIREKSI</span>
+                    </h1>
+                </div>
+                <div>
+                    <iframe style="width: 100%"  height="480" src="{{ $aboutContents['about_direksi'] }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider divider-center mt-0"><i class="fa fa-square"></i></div>
+@endif
 <div id="klien" class="page-section" id="klien-kami">
   <div class="container">
     <div class="row">

@@ -30,6 +30,9 @@ class AboutController extends Controller
                 case 'about_description':
                     $aboutContents['about_description'] = $content['content'];
                 break;
+                case 'about_direksi':
+                    $aboutContents['about_direksi'] = $content['content'];
+                break;
             }
         }
         return view('pages.about', compact('aboutContents', 'clients'));
